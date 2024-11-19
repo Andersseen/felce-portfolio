@@ -1,7 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import LavaLamp from '../components/LavaLamp';
-import ProgressBar from '../components/ProgressBar.astro';
+import About from '../components/about';
+import Contact from '../components/contact';
 
 
 const content = {
@@ -101,78 +102,15 @@ const content = {
   </section>
 
   <!-- About Section -->
-  <section class="min-h-screen bg-white dark:bg-gray-900 py-20 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-8 dark:text-white">{content.about.title}</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300">
-        {content.about.description}
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="min-h-screen bg-gray-100 dark:bg-gray-800 py-20 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-12 dark:text-white">{content.projects.title}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {content.projects.items.map(project => (
-          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
-            <h3 class="text-2xl font-bold mb-4 dark:text-white">{project.title}</h3>
-            <p class="text-gray-700 dark:text-gray-300">{project.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <About client:load />
 
 
 
-  <!-- Skills Section -->
-  <section class="min-h-screen bg-gray-50 dark:bg-gray-800 py-20 px-4 skills-section">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-16 dark:text-white">{content.skills.title}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-        {content.skills.items.map(skill => (
-          <ProgressBar skill={skill.name} percentage={skill.percentage} />
-        ))}
-      </div>
-    </div>
-  </section>
+
+
+
   <!-- Contact Section -->
-  <section class="min-h-screen bg-white dark:bg-gray-900 py-20 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-12 dark:text-white">{content.contact.title}</h2>
-      <form class="space-y-6">
-        <div>
-          <input
-            type="text"
-            placeholder={content.contact.namePlaceholder}
-            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:text-white"
-          />
-        </div>
-        <div>
-          <input
-            type="email"
-            placeholder={content.contact.emailPlaceholder}
-            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:text-white"
-          />
-        </div>
-        <div>
-          <textarea
-            placeholder={content.contact.messagePlaceholder}
-            rows="5"
-            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:text-white"
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          class="bg-gradient-to-r from-[#835eff] to-[#ff008d] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
-        >
-          {content.contact.submitButton}
-        </button>
-      </form>
-    </div>
-  </section>
+  <Contact client:load />
 
 
 
