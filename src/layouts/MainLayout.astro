@@ -1,0 +1,26 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import LanguagePicker from '../components/LanguagePicker.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <ViewTransitions />
+
+  </head>
+  <body class="font-sans text-center m-0 h-screen overflow-x-hidden bg-gradient-to-br from-[#835eff] to-[#ff008d] dark:from-[#2a1b3d] dark:to-[#1a0f2e]">
+    <header class="fixed top-0 right-0 z-50 flex items-center gap-4 p-4">
+      <LanguagePicker />
+    </header>
+    <slot />
+  </body>
+</html>

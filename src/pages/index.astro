@@ -1,0 +1,179 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LavaLamp from '../components/LavaLamp';
+import ProgressBar from '../components/ProgressBar.astro';
+
+
+const content = {
+  hero: {
+    title: "John Doe",
+    subtitle: "Full Stack Developer"
+  },
+  about: {
+    title: "About Me",
+    description: "I'm a passionate developer with expertise in modern web technologies. With over 5 years of experience, I specialize in creating beautiful and functional web applications."
+  },
+  projects: {
+    title: "My Projects",
+    items: [
+      {
+        title: "Project 1",
+        description: "A description of your amazing project."
+      },
+      {
+        title: "Project 2",
+        description: "A description of your amazing project."
+      }
+    ]
+  },
+  contact: {
+    title: "Contact Me",
+    namePlaceholder: "Your Name",
+    emailPlaceholder: "Your Email",
+    messagePlaceholder: "Your Message",
+    submitButton: "Send Message"
+  },
+  skills: {
+    title: "Skills",
+    items: [
+      { name: "Frontend Development", percentage: 90 },
+      { name: "Backend Development", percentage: 85 },
+      { name: "UI/UX Design", percentage: 75 },
+      { name: "DevOps", percentage: 80 },
+      { name: "Mobile Development", percentage: 70 },
+      { name: "Database Management", percentage: 85 }
+    ]
+  },
+  experience: {
+    title: "Experience",
+    items: [
+      {
+        year: "2023",
+        title: "Senior Developer at Tech Corp",
+        description: "Led a team of developers in building scalable web applications using modern technologies."
+      },
+      {
+        year: "2021",
+        title: "Full Stack Developer at StartUp Inc",
+        description: "Developed and maintained multiple client projects using React and Node.js."
+      },
+      {
+        year: "2019",
+        title: "Frontend Developer at Design Agency",
+        description: "Created responsive and interactive web interfaces for various clients."
+      }
+    ]
+  },
+  blog: {
+    title: "Latest Posts",
+    posts: [
+      {
+        title: "The Future of Web Development",
+        date: "April 15, 2024",
+        excerpt: "Exploring the latest trends and technologies shaping the future of web development.",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+      },
+      {
+        title: "Mastering React Hooks",
+        date: "April 10, 2024",
+        excerpt: "A comprehensive guide to using React Hooks effectively in your applications.",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+      },
+      {
+        title: "Building Scalable APIs",
+        date: "April 5, 2024",
+        excerpt: "Best practices for designing and implementing scalable REST APIs.",
+        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
+      }
+    ]
+  }
+};
+---
+
+<MainLayout title="Portfolio">
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center relative">
+    <LavaLamp client:load />
+    <div class="z-10 text-white">
+      <h1 class="text-6xl font-bold mb-4">{content.hero.title}</h1>
+      <p class="text-xl">{content.hero.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="min-h-screen bg-white dark:bg-gray-900 py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-8 dark:text-white">{content.about.title}</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        {content.about.description}
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="min-h-screen bg-gray-100 dark:bg-gray-800 py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 dark:text-white">{content.projects.title}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {content.projects.items.map(project => (
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold mb-4 dark:text-white">{project.title}</h3>
+            <p class="text-gray-700 dark:text-gray-300">{project.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Skills Section -->
+  <section class="min-h-screen bg-gray-50 dark:bg-gray-800 py-20 px-4 skills-section">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-16 dark:text-white">{content.skills.title}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+        {content.skills.items.map(skill => (
+          <ProgressBar skill={skill.name} percentage={skill.percentage} />
+        ))}
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="min-h-screen bg-white dark:bg-gray-900 py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 dark:text-white">{content.contact.title}</h2>
+      <form class="space-y-6">
+        <div>
+          <input
+            type="text"
+            placeholder={content.contact.namePlaceholder}
+            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:text-white"
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            placeholder={content.contact.emailPlaceholder}
+            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:text-white"
+          />
+        </div>
+        <div>
+          <textarea
+            placeholder={content.contact.messagePlaceholder}
+            rows="5"
+            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-800 dark:text-white"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-[#835eff] to-[#ff008d] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
+        >
+          {content.contact.submitButton}
+        </button>
+      </form>
+    </div>
+  </section>
+
+
+
+</MainLayout>
