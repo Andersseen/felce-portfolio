@@ -1,7 +1,7 @@
 import React from "react";
 import "./animate.css";
-import AnimatedBody from "./AnimatedBody";
-import AnimatedTitle from "./AnimatedTitle";
+import AnimatedBody from "./AnimatedBody.tsx";
+import AnimatedTitle from "./AnimatedTitle.tsx";
 import {
   SiGit,
   SiGithub,
@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 import AnimatedTools from "./AnimatedTools.tsx";
 
-const About = () => {
+const Skills = () => {
   return (
     <section
       className="relative z-10 w-full items-center justify-center overflow-hidden bg-[#0E1016] bg-cover bg-center pt-16 pb-36 md:pt-20 md:pb-44 lg:pt-20 lg:pb-56"
@@ -86,4 +86,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Skills;

@@ -1,10 +1,11 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import LavaLamp from '../components/LavaLamp';
-import About from '../components/about';
-import Contact from '../components/contact';
+import MainLayout from '@/layouts/MainLayout.astro';
+import LavaLamp from '@/components/LavaLamp';
+import Skills from '@/components/skills';
+import Contact from '@/components/contact';
 import WaveDivider from '@/components/WaveDivider.astro';
 import { CONTENT } from '@/data/content';
+import About from '@/components/About';
 
 
 
@@ -21,7 +22,10 @@ import { CONTENT } from '@/data/content';
   </section>
   <WaveDivider/>
   <!-- About Section -->
- <About client:load /> 
+  <About client:only /> 
+  <!-- Skills Section -->
+
+ <Skills client:load /> 
 
 
 
