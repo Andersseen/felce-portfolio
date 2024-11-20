@@ -4,9 +4,15 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        primary: "#282a2e",
+        secondary: "#F9F5E0",
+        mark: "#F5895C",
+        background: "#7450e9",
+      },
       linearGradients: {
-        "bg-top": ["180deg", "#0e1016 0%", "transparent 50%"],
-        "bg-bottom": ["0deg", "#0e1016 0%", "transparent 100%"],
+        "bg-top": ["180deg", "#282a2e 0%", "transparent 50%"],
+        "bg-bottom": ["0deg", "#282a2e 0%", "transparent 100%"],
       },
       animation: {
         "blob-one": "blob-one 18s infinite ease-in-out",
