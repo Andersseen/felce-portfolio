@@ -21,15 +21,21 @@ import About from '@/components/About';
     </div>
   </section>
   <WaveDivider/>
-  <!-- About Section -->
-  <About client:only /> 
+
+  <div class="relative">
+    <div class="sticky top-0">
+      <About client:only /> 
+    </div>
+    <div class="sticky top-0">
+        <!-- Skills Section -->
+      <Skills client:only /> 
+    </div>
+    <div class="sticky top-0">
+        <!-- Contact Section -->
+      <Contact client:load />
+    </div>
+
+</div>
   <!-- Skills Section -->
-
- <Skills client:only /> 
-
-  <!-- Contact Section -->
-  <Contact client:load />
-
-
 
 </MainLayout>
