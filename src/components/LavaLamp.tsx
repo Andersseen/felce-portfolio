@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LavaLamp() {
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen min-w-screen -z-10">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen min-w-screen -z-10 bg-gradient-to-br from-[#7450e9] to-[#F9F5E0]">
       <div className="absolute h-full w-full top-0 left-0 [filter:url('#goo')]">
         <div className="absolute w-[200px] h-[200px] left-[35%] bottom-[-15%] rounded-full bg-gradient-to-r from-[#F5895C] to-[#F9F5E0] animate-[wobble_4s_ease-in-out_alternate_infinite,blob-one_18s_ease-in-out_infinite]"></div>
         <div className="absolute w-[330px] h-[330px] right-[24%] bottom-[-65%] rounded-full bg-gradient-to-r from-[#F5895C] to-[#F9F5E0] animate-[wobble_5s_ease-in-out_alternate_infinite,blob-two_22s_ease-in-out_infinite]"></div>
