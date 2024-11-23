@@ -4,7 +4,7 @@ import { LampContainer } from "./lamp";
 export const Contact = () => {
   return (
     <LampContainer className="py-[72px] sm:py-24 relative overflow-clip">
-      <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] left-1/2 -translate-x-1/2 bg-[radial-gradient(closest-side,#7450e9_82%,#F9F5E0)] top-[calc(100%-96px)] sm:top-[calc(200%-20px)]"></div>
+      <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] left-1/2 -translate-x-1/2 bg-[radial-gradient(closest-side,#7450e9_82%,#F9F5E0)] top-[calc(400%-96px)] sm:top-[calc(200%-20px)]"></div>
       <div className="container relative">
         <div className="flex justify-center mt-8 ">
           <div className="inline-flex relative">
