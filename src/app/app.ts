@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [],
+  template: `<h1
+    class="text-3xl font-bold underline text-center mt-10 bg-neutral-50"
+  >
+    Angular v19.1 + Tailwind CSS 4.0
+  </h1>`,
 })
-export class App {
-  protected title = 'felce-portfolio';
-}
+export class App {}
