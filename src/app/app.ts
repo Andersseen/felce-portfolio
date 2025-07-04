@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
-  template: `<h1
-    class="text-3xl font-bold underline text-center mt-10 bg-neutral-50"
-  >
-    Angular v19.1 + Tailwind CSS 4.0
-  </h1>`,
+  imports: [RouterOutlet],
+  template: `<router-outlet />`,
 })
 export class App {}
